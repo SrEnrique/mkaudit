@@ -1,4 +1,5 @@
 require 'tty-file'
+require 'pathname'
 
 class Templater
 
@@ -27,8 +28,15 @@ class Templater
 
     def generate(template_options)
         @templates.each do |template|
-            TTY::File.copy_file(template[0], template[1], context: template_options)
+            source = templates_root_path.join(template[0])
+            target = template[1]
+
+            TTY::File.copy_file(source, target, context: template_options)
         end
+    end
+
+    def templates_root_path
+        Pathname(__dir__)
     end
 
 

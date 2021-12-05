@@ -29,8 +29,8 @@ module Mkaudit
 
 
         templater.add_empty_directories variables[:project_name] 
-        templater.add_mapping("lib/mkaudit/templates/nmap.tt", "#{ @project_name }/01-discover/nmap")
-        templater.add_mapping("lib/mkaudit/templates/README.md.tt", "#{ @project_name }/README.md")
+        templater.add_mapping("../templates/nmap.tt", "#{ @project_name }/01-discover/nmap")
+        templater.add_mapping("../templates/README.md.tt", "#{ @project_name }/README.md")
 
         templater.generate variables
         output.puts "happy hack - (good luck)"
