@@ -1,28 +1,80 @@
 # Mkaudit
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mkaudit`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'mkaudit'
+clone project
+```
+git clone 
 ```
 
-And then execute:
+Install dependencies
+```
+bundle install
+```
 
-    $ bundle install
 
-Or install it yourself as:
+Package build
+```
+rake build
+```
 
-    $ gem install mkaudit
+Package install
+```
+rake install 
+```
 
-## Usage
 
-TODO: Write usage instructions here
+# Usage
+
+## Command `new`
+
+Running `mkaudit new [Project]` create a simple structure of files 
+
+```bash
+mkaudit new my_target_attack
+```
+The output will contain all the files that have been created during setup:
+```text
+Create project: my_target_attack
+      create  my_target_attack
+      create  my_target_attack/01-discover
+      create  my_target_attack/02-content
+      create  my_target_attack/03-scripts
+      create  my_target_attack/01-discover/nmap
+      create  my_target_attack/README.md
+happy hack - (good luck)
+```
+The following files and directories will be generated
+```
+my_target_attack
+├── 01-discover
+│   └── nmap
+├── 02-content
+├── 03-scripts
+└── README.md
+
+3 directories, 2 files
+```
+
+### flags in New
+
+#### `--target`, `-t`
+Add target to files
+* 01-discover/nmap
+* README.md
+#### `--ports`, `-p`
+Add ports to files
+* 01-discover/nmap
+#### `--autor`, `-a`
+Add autor to files
+* README.md 
+#### `--description`, `-d`
+Add description to files
+* README.md
+
 
 ## Development
 
