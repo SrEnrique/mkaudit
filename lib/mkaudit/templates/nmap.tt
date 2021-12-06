@@ -3,4 +3,4 @@
 sudo nmap -p- -sS --min-rate 5000 --open -v -n <%= target %> -oG allPorts
 
 # spesific nmap port scanner, save result in file called target
-nmap -sCV -p <%= ports %> 10.10.11.120 -A -oN target
+nmap -sCV -p <%= ports %> <%= target %> -A -oN target
